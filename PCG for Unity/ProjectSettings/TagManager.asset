@@ -16,7 +16,7 @@ TagManager:
   - BlockingLayer
   - Floor
   - Units
-  - 
+  - Exit
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Floor
     uniqueID: 1730548177
+    locked: 0
+  - name: Items
+    uniqueID: 2003199243
     locked: 0
   - name: Units
     uniqueID: 995754437
