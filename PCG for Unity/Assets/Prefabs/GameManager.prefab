@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 433658}
   - component: {fileID: 11433656}
   - component: {fileID: 114515995016943616}
+  - component: {fileID: 114118442680706480}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -55,6 +56,20 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133658}
   m_IsPrefabAsset: 1
+--- !u!114 &114118442680706480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7dc16c82b9c46cfa673144e123e756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBound: 0
+  maxBound: 0
+  endPos: {x: 0, y: 0}
 --- !u!114 &114515995016943616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 5
   rows: 5
+  exit: {fileID: 1054229369588672, guid: f2c2ff5bf744a44d685a9777248da74d, type: 2}
   floorTiles:
   - {fileID: 106160, guid: 038998774947c4a8fa170d5b4492a7dd, type: 2}
   - {fileID: 137908, guid: 41775b29042354678bcd58bb1a75871e, type: 2}
@@ -86,3 +102,7 @@ MonoBehaviour:
   - {fileID: 110520, guid: 5ddc2d7828b2d462286f09274199ad9a, type: 2}
   - {fileID: 110520, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
   - {fileID: 110520, guid: 741804431f4d341cdae1f15b3896aeff, type: 2}
+  outerWallTiles:
+  - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
+  - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
+  - {fileID: 110520, guid: e85c94355cc4641da919bd5d0ac956d4, type: 2}

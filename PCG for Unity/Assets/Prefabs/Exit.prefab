@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4320751367499574}
   - component: {fileID: 212334863223536678}
   - component: {fileID: 61365735112563678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!212 &212334863223536678
 SpriteRenderer:

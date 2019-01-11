@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6146652}
   - component: {fileID: 5046652}
   - component: {fileID: 11446652}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -111,8 +111,10 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
-  wallDamage: 1
   healthText: {fileID: 0}
+  wallDamage: 1
+  onWorldBoard: 0
+  dungeonTransition: 0
 --- !u!212 &21246652
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -145,8 +147,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -900995045
-  m_SortingLayer: 0
+  m_SortingLayerID: 995754437
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
