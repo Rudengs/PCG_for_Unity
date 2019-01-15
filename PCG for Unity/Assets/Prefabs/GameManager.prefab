@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnDelay: 0.1
-  healthPoints: 100
+  healthPoints: 50
   playersTurn: 1
 --- !u!1001 &100100000
 Prefab:
@@ -106,3 +106,4 @@ MonoBehaviour:
   - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
   - {fileID: 110520, guid: b0ace21a29149403094422fb3bd96aa9, type: 2}
   - {fileID: 110520, guid: e85c94355cc4641da919bd5d0ac956d4, type: 2}
+  chestTile: {fileID: 1858267258859438, guid: 355806564a9384595b874a13bc5b8da3, type: 2}

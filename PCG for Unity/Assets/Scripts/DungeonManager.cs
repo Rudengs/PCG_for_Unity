@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public enum TileType
 {
-    essential, random, empty
+    essential, random, empty, chest
 }
 
 public class DungeonManager : MonoBehaviour {
@@ -137,7 +137,10 @@ public class DungeonManager : MonoBehaviour {
                     0 < chamberTilePos.x && chamberTilePos.x < maxBound &&
                     0 < chamberTilePos.y && chamberTilePos.y < maxBound)
                 {
-                    gridPositions.Add(chamberTilePos, TileType.empty);
+                    if(Random.Range(0, 70) == 1)
+                        gridPositions.Add(chamberTilePos, TileType.chest);
+                    else
+                        gridPositions.Add(chamberTilePos, TileType.empty);
                 }
             }
         }
