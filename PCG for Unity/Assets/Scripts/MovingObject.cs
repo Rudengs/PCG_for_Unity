@@ -58,6 +58,11 @@ public abstract class MovingObject : MonoBehaviour
 	protected virtual bool AttemptMove <T> (int xDir, int yDir)
 		where T : Component
 	{
+        if (xDir == 1)
+            transform.eulerAngles = Vector3.zero;
+        else if (xDir == -1)
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
 		RaycastHit2D hit;
 		
 		bool canMove = Move (xDir, yDir, out hit);
@@ -73,9 +78,6 @@ public abstract class MovingObject : MonoBehaviour
 		return false;
 	}
 	
-	
-	//The abstract modifier indicates that the thing being modified has a missing or incomplete implementation.
-	//OnCantMove will be overriden by functions in the inheriting classes.
 	protected abstract void OnCantMove <T> (T component)
 		where T : Component;
 }

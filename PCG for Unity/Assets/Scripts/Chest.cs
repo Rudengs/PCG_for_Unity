@@ -6,6 +6,7 @@ public class Chest : MonoBehaviour {
 
     public Sprite openSprite;
     public Item randomItem;
+    public Weapon weapon;
 
     private SpriteRenderer spriteRenderer;
 
@@ -18,8 +19,16 @@ public class Chest : MonoBehaviour {
     {
         spriteRenderer.sprite = openSprite;
 
-        randomItem.RandomItemInit();
-        GameObject toInstantiate = randomItem.gameObject;
+        GameObject toInstantiate;
+
+        //if (Random.Range(0, 2) == 1)
+        //{
+        //    randomItem.RandomItemInit();
+        //    toInstantiate = randomItem.gameObject;
+        //}
+        //else
+            toInstantiate = weapon.gameObject;
+
         GameObject instance = Instantiate(toInstantiate, new Vector3(transform.position.x, transform.position.y, 0),
                                 Quaternion.identity) as GameObject;
         instance.transform.SetParent(transform.parent);

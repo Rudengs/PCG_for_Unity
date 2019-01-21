@@ -8,6 +8,7 @@ TagManager:
   - Food
   - Soda
   - Item
+  - Weapon
   layers:
   - Default
   - TransparentFX

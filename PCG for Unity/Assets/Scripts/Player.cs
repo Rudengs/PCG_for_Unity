@@ -7,15 +7,18 @@ public class Player : MovingObject
 { 
     private Animator animator;                  
     private int health;
-    private Dictionary<string, Item> inventory;  
+    private Dictionary<string, Item> inventory;
+    private Weapon weapon;
 
     public Text healthText;
     public Image glove;
     public Image boot;
+    public Image weaponComp1, weaponComp2, weaponComp3;
                   
     public static Vector2 position;
     public int wallDamage = 1;
     public int attackMod = 0, defenseMod = 0;
+    public bool isFacingRight;
     public bool onWorldBoard;
     public bool dungeonTransition;
 
@@ -26,6 +29,7 @@ public class Player : MovingObject
 		health = GameManager.instance.healthPoints;
 		healthText.text = "Health: " + health;
         position.x = position.y = 2;
+        isFacingRight = true;
         onWorldBoard = true;
         dungeonTransition = false;
 
@@ -106,6 +110,22 @@ public class Player : MovingObject
             UpdateInventory(collision);
             Destroy(collision.gameObject);
         }
+        else if(collision.tag == "Weapon")
+        {
+            if (weapon)
+                Destroy(transform.GetChild(0).gameObject);
+
+            collision.enabled = false;
+            collision.transform.parent = transform;
+            weapon = collision.GetComponent<Weapon>();
+            weapon.AquireWeapon();
+            weapon.inPlayerInventory = true;
+            weapon.EnableSprtieRender(false);
+            wallDamage = attackMod + 3;
+            weaponComp1.sprite = weapon.GetComponentImage(0);
+            weaponComp2.sprite = weapon.GetComponentImage(1);
+            weaponComp3.sprite = weapon.GetComponentImage(2);
+        }
     }
 
     private void CheckIfGameOver()
@@ -117,8 +137,13 @@ public class Player : MovingObject
     }
 
     protected override bool AttemptMove <T> (int xDir, int yDir)
-	{	
-		bool hit = base.AttemptMove <T> (xDir, yDir);
+	{
+        if (xDir == 1)
+            isFacingRight = true;
+        else if (xDir == -1)
+            isFacingRight = false;
+
+        bool hit = base.AttemptMove <T> (xDir, yDir);
 		
 		GameManager.instance.playersTurn = false;
 
@@ -140,6 +165,8 @@ public class Player : MovingObject
 
 
         animator.SetTrigger("playerChop");
+        if (weapon)
+            weapon.UseWeapon();
     }
 	
 	public void LoseHealth (int loss)
@@ -193,6 +220,9 @@ public class Player : MovingObject
             attackMod += gear.Value.attackMod;
             defenseMod += gear.Value.defenseMod;
         }
+
+        if (weapon)
+            wallDamage = attackMod + 3;
     }
 }
 

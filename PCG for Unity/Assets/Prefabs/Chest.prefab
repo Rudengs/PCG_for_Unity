@@ -81,6 +81,7 @@ MonoBehaviour:
   openSprite: {fileID: 21300002, guid: 189731a70b53a42f59ce5e17108b947a, type: 3}
   randomItem: {fileID: 114279123183723974, guid: 22607f4540a56459c929863b3a255fcc,
     type: 2}
+  weapon: {fileID: 114255326765654076, guid: 4779880f4f2fb4116bbc13d36c9a3bcd, type: 2}
 --- !u!212 &212775116689226380
 SpriteRenderer:
   m_ObjectHideFlags: 1
